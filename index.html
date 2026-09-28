@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Record Player</title>
+  <link rel="icon" href="assets/icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-card">
+    <header class="top-bar">
+      <button id="menuBtn" class="icon-btn" title="Settings" aria-label="Menu">
+        <svg viewBox="0 0 24 24" width="22" height="22">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </header>
+
+    <div class="turntable">
+      <div class="record" id="record">
+        <div class="record-label"></div>
+      </div>
+      <div class="tonearm" id="tonearm">
+        <div class="tonearm-pivot"></div>
+        <div class="tonearm-rod">
+          <div class="tonearm-head"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="now-playing">
+      <p class="now-playing-text">now playing - <span id="nowPlayingName">no song selected</span></p>
+      <div class="scrubber">
+        <input type="range" id="seekBar" min="0" max="100" value="0" step="0.1" />
+      </div>
+      <div class="controls">
+        <button id="prevBtn" class="ctrl-btn" aria-label="Previous">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6h2v12H6zM20 6L9 12l11 6z" fill="currentColor"/></svg>
+        </button>
+        <button id="playPauseBtn" class="ctrl-btn play-btn" aria-label="Play/Pause">
+          <svg id="playIcon" viewBox="0 0 24 24" width="22" height="22"><path d="M7 5l13 7-13 7z" fill="currentColor"/></svg>
+          <svg id="pauseIcon" viewBox="0 0 24 24" width="22" height="22" style="display:none"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
+        </button>
+        <button id="nextBtn" class="ctrl-btn" aria-label="Next">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M16 6h2v12h-2zM4 6l11 6-11 6z" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="playlist-box">
+      <div class="playlist-header">
+        <span>playlist: <span id="playlistName">no folder selected</span></span>
+        <button id="chooseFolderBtn" class="link-btn">choose folder</button>
+      </div>
+      <ul id="trackList" class="track-list">
+        <li class="empty-hint">Click the menu icon or "choose folder" to load your MP3s.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="settingsOverlay" class="settings-overlay">
+    <div class="settings-panel">
+      <div class="settings-header">
+        <h2>Settings</h2>
+        <button id="closeSettingsBtn" class="icon-btn" aria-label="Close settings">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <div class="settings-row">
+        <span>Music folder</span>
+        <button id="settingsChooseFolderBtn" class="link-btn">choose folder</button>
+      </div>
+
+      <div class="settings-row">
+        <span>Theme</span>
+        <div class="theme-options">
+          <button id="lightThemeBtn" class="theme-btn" data-theme="light">Light</button>
+          <button id="darkThemeBtn" class="theme-btn" data-theme="dark">Black</button>
+        </div>
+      </div>
+
+      <div class="settings-row">
+        <span>Glow effect</span>
+        <div class="theme-options">
+          <button id="glowOnBtn" class="theme-btn" data-glow="on">On</button>
+          <button id="glowOffBtn" class="theme-btn" data-glow="off">Off</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="audioPlayer"></audio>
+  <script src="renderer.js"></script>
+</body>
+</html>

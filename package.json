@@ -1,0 +1,17 @@
+{
+  "name": "record-player",
+  "version": "1.0.0",
+  "description": "A desktop record-player app for your local MP3 collection",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^32.0.0"
+  },
+  "dependencies": {
+    "music-metadata": "^10.5.0"
+  }
+}
