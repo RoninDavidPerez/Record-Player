@@ -24,16 +24,17 @@ npm start
 
 ## Download
 
-A portable Windows executable is available at [`dist/Record Player 1.0.0.exe`](dist/Record%20Player%201.0.0.exe) — no installation needed, just download and double-click to run.
+- **Installer**: [`dist/Record Player Setup 1.0.0.exe`](dist/Record%20Player%20Setup%201.0.0.exe) — guided setup with Start Menu/Desktop shortcuts.
+- **Portable**: [`dist/Record Player 1.0.0.exe`](dist/Record%20Player%201.0.0.exe) — no installation needed, just download and double-click to run.
 
-## Building the .exe yourself
+## Building the installer/portable .exe yourself
 
 ```bash
 npm install
 npm run dist
 ```
 
-The portable executable will be generated at `dist/Record Player 1.0.0.exe`.
+This generates both `dist/Record Player Setup 1.0.0.exe` (installer) and `dist/Record Player 1.0.0.exe` (portable).
 
 ## Project structure
 
