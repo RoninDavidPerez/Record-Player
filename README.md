@@ -22,6 +22,19 @@ npm install
 npm start
 ```
 
+## Download
+
+A portable Windows executable is available at [`dist/Record Player 1.0.0.exe`](dist/Record%20Player%201.0.0.exe) — no installation needed, just download and double-click to run.
+
+## Building the .exe yourself
+
+```bash
+npm install
+npm run dist
+```
+
+The portable executable will be generated at `dist/Record Player 1.0.0.exe`.
+
 ## Project structure
 
 - `main.js` — Electron main process (window creation, folder picking, metadata reading, settings persistence)

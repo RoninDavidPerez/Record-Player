@@ -4,14 +4,37 @@
   "description": "A desktop record-player app for your local MP3 collection",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^32.0.0"
+    "electron": "^32.0.0",
+    "electron-builder": "^26.15.3"
   },
   "dependencies": {
     "music-metadata": "^10.5.0"
+  },
+  "build": {
+    "appId": "com.roninperez.recordplayer",
+    "productName": "Record Player",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "styles.css",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "assets/icon.ico"
+    }
   }
 }

@@ -1,5 +1,6 @@
 node_modules/
-dist/
+dist/*
+!dist/*.exe
 out/
 *.log
 .DS_Store
